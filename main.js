@@ -18,8 +18,7 @@ const blocks4 = [];
 const blocks5 = [];
 
 const score =　new Score(0, 700, 40, "lime");
-
-
+const clear = new Clear("", 0, 300, "orange");
 
 
 let getscore = 0;

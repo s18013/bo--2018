@@ -46,29 +46,40 @@ class Block {
                 // ブロックの左上角より下側であたったら上に戻さない
                 ball.reboundHorizontal(left - ball.right);
                 getscore += 3;
+                clearpoint += 1;
+
             } else if (ball.leftBottom.x > right && ball.leftBottom.y > top
                 && ball.leftBottom.y < bottom) {
                 // ブロックの右上角より下側であたったら上に戻さない
                 ball.reboundHorizontal(ball.left - right);
                 getscore += 3;
+                clearpoint += 1;
+
             } else if (ball.rightTop.x < left && ball.rightTop.y < bottom
                 && ball.rightTop.y > top) {
                 // ブロックの左下角より上側であたったら下に戻さない
                 ball.reboundHorizontal(left - ball.right);
                 getscore += 3;
+                clearpoint += 1;
+
             } else if (ball.leftTop.x > right && ball.leftTop.y < bottom
                 && ball.leftTop.y > top) {
                 // ブロックの右下角より上側であたったら下に戻さない
                 ball.reboundHorizontal(ball.left - right);
                 getscore += 3;
+                clearpoint += 1;
+
             } else if (ball.bottom > top && ball.top < top) {
                 // ブロックの上にあたった
                 ball.reboundVertical(ball.bottom - top);
                 getscore += 2;
+                clearpoint += 1;
+
             } else {
                 // ブロックの下に当たった
                 ball.reboundVertical(ball.top - bottom);
                 getscore += 1;
+                clearpoint += 1;
             }
         } else {
             result = false;
